@@ -8,6 +8,8 @@
     "flakes"
   ];
 
+  programs.firefox.enable = true;
+
   environment.systemPackages = with pkgs; [
     vim
     google-chrome
