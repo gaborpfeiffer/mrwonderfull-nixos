@@ -2,9 +2,12 @@
 
 {
   imports = [
+    ###DESKTOP ENV CHOOSE ONE##
+    #../../common/gnome.nix   #
+    ../../common/kde.nix      #
+    ###########################
     ./hardware-configuration.nix
     ./bootloader.nix
-    ../../common/gnome.nix
     ../../common/users.nix
     ../../common/packages.nix
     ../../common/audio.nix
