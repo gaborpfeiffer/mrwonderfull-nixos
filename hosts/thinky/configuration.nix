@@ -7,6 +7,7 @@
     ../../common/gnome.nix
     ../../common/users.nix
     ../../common/packages.nix
+    ../../common/audio.nix
     ../../common/time.nix
     ../../common/i18n.nix
   ];
