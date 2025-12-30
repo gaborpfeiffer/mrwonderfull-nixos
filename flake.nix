@@ -1,23 +1,39 @@
 {
-  description = "Multi-host NixOS config with devShell";
+  description = "Multi-host NixOS config with devShell and Home Manager";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs }: {
-    nixosConfigurations = {
-      thinky = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/thinky/configuration.nix
-        ];
-      };
+  outputs = { self, nixpkgs, home-manager, ... }:
+  let
+    system = "x86_64-linux";
+  in {
+    nixosConfigurations.thinky = nixpkgs.lib.nixosSystem {
+      inherit system;
+
+      modules = [
+        ./hosts/thinky/configuration.nix
+
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+
+          home-manager.users.mrwonderfull =
+            import ./home/mrwonderfull.nix;
+        }
+      ];
     };
 
-    devShells.x86_64-linux.default =
+    devShells.${system}.default =
       let
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = nixpkgs.legacyPackages.${system};
       in
       pkgs.mkShell {
         packages = with pkgs; [
