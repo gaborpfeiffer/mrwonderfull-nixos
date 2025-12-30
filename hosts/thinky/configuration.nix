@@ -3,9 +3,10 @@
 {
   imports = [
     ###DESKTOP ENV CHOOSE ONE##
+    ../../common/cosmic.nix
     #../../common/gnome.nix
     #../../common/kde.nix
-    ../../common/xfce.nix
+    #../../common/xfce.nix
     ###########################
     ./hardware-configuration.nix
     ./bootloader.nix
