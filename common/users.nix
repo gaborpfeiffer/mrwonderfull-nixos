@@ -6,6 +6,4 @@
     description = "Mr WonderFull";
     extraGroups = [ "wheel" "networkmanager" ];
   };
-
-  networking.networkmanager.enable = true;
 }

@@ -16,6 +16,7 @@
     ../../common/time.nix
     ../../common/i18n.nix
     ../../common/automatic_cleanup.nix
+    ../../common/networking.nix
   ];
 
   networking.hostName = "thinky";

@@ -9,7 +9,7 @@
   # Git
   programs.git = {
     enable = true;
-    userName = "Gabor Pfeiffer";
+    userName = "Pfeiffer Gabor";
     userEmail = "gaborpfeiffer221@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
