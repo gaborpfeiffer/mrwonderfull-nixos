@@ -14,21 +14,40 @@
   let
     system = "x86_64-linux";
   in {
-    nixosConfigurations.thinky = nixpkgs.lib.nixosSystem {
-      inherit system;
+    nixosConfigurations = {
+      thinky = nixpkgs.lib.nixosSystem {
+        inherit system;
 
-      modules = [
-        ./hosts/thinky/configuration.nix
+        modules = [
+          ./hosts/thinky/configuration.nix
 
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
 
-          home-manager.users.mrwonderfull =
-            import ./home/mrwonderfull.nix;
-        }
-      ];
+            home-manager.users.mrwonderfull =
+              import ./home/mrwonderfull.nix;
+          }
+        ];
+      };
+
+      gamy = nixpkgs.lib.nixosSystem {
+        inherit system;
+
+        modules = [
+          ./hosts/gamy/configuration.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.mrwonderfull =
+              import ./home/mrwonderfull.nix;
+          }
+        ];
+      };
     };
 
     devShells.${system}.default =
