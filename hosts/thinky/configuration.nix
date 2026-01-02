@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  system.stateVersion = "25.11";
+  
   imports = [
     ###DESKTOP ENV CHOOSE ONE##
     ../../common/cosmic.nix

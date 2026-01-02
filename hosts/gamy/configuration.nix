@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  system.stateVersion = "25.11";
+
   imports = [
     ../../common/xfce.nix
     ./hardware-configuration.nix
