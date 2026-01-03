@@ -14,6 +14,5 @@
     vim
     google-chrome
     vscode
-    git
   ];
 }
