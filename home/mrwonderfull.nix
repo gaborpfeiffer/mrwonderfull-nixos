@@ -28,7 +28,7 @@
       ];
 
       userSettings = {
-        "workbench.colorTheme" = "Light Modern";
+        "workbench.colorTheme" = "Default Light Modern";
         "workbench.sideBar.location" = "right";
         
         "editor.formatOnSave" = true;
