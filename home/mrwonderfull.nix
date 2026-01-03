@@ -16,7 +16,7 @@
     };
   };
 
-  # Vscode
+  # VS Code
   programs.vscode = {
     enable = true;
 
@@ -26,12 +26,10 @@
 
     userSettings = {
       "workbench.colorTheme" = "Solarized Dark";
-
       "workbench.sideBar.location" = "right";
 
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
       "editor.formatOnSave" = true;
-    }
-  }
-
+    };
+  };
 }
