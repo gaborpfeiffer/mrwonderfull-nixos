@@ -9,9 +9,11 @@
   # Git
   programs.git = {
     enable = true;
-    userName = "Pfeiffer Gabor";
-    userEmail = "gaborpfeiffer221@gmail.com";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Pfeiffer Gabor";
+        email = "gaborpfeiffer221@gmail.com";
+      };
       init.defaultBranch = "main";
     };
   };
@@ -20,16 +22,23 @@
   programs.vscode = {
     enable = true;
 
-    extensions = with pkgs.vscode-extensions; [
-      esbenp.prettier-vscode
-    ];
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        esbenp.prettier-vscode
+      ];
 
-    userSettings = {
-      "workbench.colorTheme" = "Solarized Dark";
-      "workbench.sideBar.location" = "right";
+      userSettings = {
+        "workbench.colorTheme" = "Solarized Dark";
+        "workbench.sideBar.location" = "right";
+        "editor.formatOnSave" = true;
 
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "editor.formatOnSave" = true;
+        "[javascript]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "[typescript]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+      };
     };
   };
 }
