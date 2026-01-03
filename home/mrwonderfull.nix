@@ -30,14 +30,9 @@
       userSettings = {
         "workbench.colorTheme" = "Solarized Dark";
         "workbench.sideBar.location" = "right";
+        
         "editor.formatOnSave" = true;
-
-        "[javascript]" = {
-          "editor.defaultFormatter" = "esbenp.prettier-vscode";
-        };
-        "[typescript]" = {
-          "editor.defaultFormatter" = "esbenp.prettier-vscode";
-        };
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
     };
   };
