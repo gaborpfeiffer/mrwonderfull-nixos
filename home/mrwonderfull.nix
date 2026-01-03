@@ -15,4 +15,23 @@
       init.defaultBranch = "main";
     };
   };
+
+  # Vscode
+  programs.vscode = {
+    enable = true;
+
+    extensions = with pkgs.vscode-extensions; [
+      esbenp.prettier-vscode
+    ];
+
+    userSettings = {
+      "workbench.colorTheme" = "Solarized Dark";
+
+      "workbench.sideBar.location" = "right";
+
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.formatOnSave" = true;
+    }
+  }
+
 }
